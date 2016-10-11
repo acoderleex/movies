@@ -32,7 +32,6 @@ class App extends Component {
     }
     render(){
       if (this.props.isLoading === true) {
-        console.log("==isLoading===");
         return(
           <View style={ styles.loadingView } >
             <View style={styles.loadingHeader}>
@@ -42,9 +41,7 @@ class App extends Component {
           </View>
         );
       }
-      console.log("==this.props===");
       var imageUrl= getImageSource(this.props.data.imageUrl);
-      console.log("----------"+imageUrl);
       return(
         <View style={styles.container}>
           <Text style={styles.welcome}>Movies</Text>
