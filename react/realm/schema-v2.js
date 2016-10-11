@@ -22,10 +22,6 @@ const Shop = {
     bannerItem: {
         objectType:'BannerItem',
         type: 'list'
-    },
-    bannerItem: {
-        objectType: 'BannerItem',
-        type: 'list'
     }
   }
 };

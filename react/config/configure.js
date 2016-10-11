@@ -2,5 +2,5 @@
 
 
 module.exports = {
-  clientUrl: ''
+  clientUrl: 'http://api.meituan.com'
 };
