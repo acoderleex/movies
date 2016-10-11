@@ -51,7 +51,7 @@ class App extends Component {
     }
 }
 
-function select(store: any,props: Props) {
+function mapStateToProps(store: any,props: Props) {
     return {
       isLoading: store.home.isLoading,
       isRefreshing: store.home.isRefreshing,
@@ -67,4 +67,4 @@ const styles = StyleSheet.create(assign(
   LoadingStyle
 ));
 
-module.exports = connect(select)(App);
+module.exports = connect(mapStateToProps)(App);
