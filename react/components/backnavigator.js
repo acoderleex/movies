@@ -28,7 +28,7 @@ class BackNavigator extends Component {
     };
   }
   componentWillMount(){
-    this.setState({backIcon:require('../img/back.png')});
+    this.setState({backIcon:require('image!back')});
   }
   render(){
     if (!this.state.backIcon) {

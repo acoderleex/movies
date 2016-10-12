@@ -19,13 +19,15 @@ import More from './components/more';
 type State = {
   selectedTab: string;
   notifyCount: number;
+  isShowHeader: bool;
 };
 
 class AppTables extends Component{
 
   changeTab(name:string){
     this.setState({
-      selectedTab: name
+      selectedTab: name,
+      isShowHeader: false
     });
   }
 
@@ -35,11 +37,13 @@ class AppTables extends Component{
     super();
     this.state={
       selectedTab:'home',
-      notifyCount: 1
+      notifyCount: 1,
+      isShowHeader:true
     }
   }
 
   render(){
+    console.log("======renderrenderrenderrender=====");
     return(
       <TabBarIOS  tintColor='#36b9af'>
            <TabBarIOS.Item
@@ -50,7 +54,7 @@ class AppTables extends Component{
               selected={this.state.selectedTab==='home'}
               onPress={()=>this.changeTab('home')}>
               <NavigatorIOS
-                  navigationBarHidden={ true}
+                  navigationBarHidden={ !this.state.isShowHeader }
                   shadowHidden={ true }
                   style={styles.container}
                   initialRoute={{

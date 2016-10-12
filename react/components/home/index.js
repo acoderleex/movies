@@ -62,6 +62,7 @@ class App extends Component {
             passprops: { isShowBackIcon: 1 }
         });
       }else  if (indexItem==1) {
+        this.setState({isShowHeader:false}),
         this.props.navigator.push({
             mine: true,
             passprops: { isShowBackIcon: 1 }
