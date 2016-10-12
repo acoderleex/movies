@@ -7,7 +7,7 @@ import configureRealm from './realm/configure';
 import configureStore from './store/configure';
 import { setHomeLoading,getHomeData } from './actions';
 
-import App from './app';
+import Tables from './apptables';
 
 
 type State = {
@@ -29,7 +29,7 @@ class Entry extends Component {
   render(){
     return(
       <Provider store={this.state.store}>
-          <App/>
+          <Tables/>
       </Provider>
     );
   }

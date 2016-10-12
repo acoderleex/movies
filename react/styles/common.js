@@ -6,6 +6,9 @@ const CommonStyle = {
     alignItems: 'center',
     backgroundColor: '#F8F8F8',
   },
+  content: {
+    flex: 1
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -21,5 +24,10 @@ const CommonStyle = {
     width: 80,
     height: 40,
   },
+
+  touch:{
+    flex:1,
+    backgroundColor:'white',
+  }
 };
 module.exports = CommonStyle;
