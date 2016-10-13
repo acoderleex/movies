@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import {
    StyleSheet,
    Text,
-   View
+   View,
+   TouchableHighlight
 } from 'react-native';
 
 import assign from 'object-assign';
@@ -13,9 +14,11 @@ class Onsite extends Component {
 
   render() {
     return (
-      <View style={ styles.container}>
-          <Text style={ styles.welcome}>Onsite</Text>
-      </View>
+      <TouchableHighlight onPress={()=>this.props.callBackParent()} style={styles.touch}>
+        <View style={ styles.container}>
+            <Text style={ styles.welcome}>Onsite</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 }

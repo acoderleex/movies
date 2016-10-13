@@ -31,6 +31,15 @@ class AppTables extends Component{
     });
   }
 
+  onChildClick(){
+    console.log('-----caaaaaa------');
+    console.log(this);
+    console.log('-----caaaaaa--1----');
+    this.setState({
+      notifyCount:11
+    });
+  }
+
   state: State;
 
   constructor(){
@@ -43,7 +52,6 @@ class AppTables extends Component{
   }
 
   render(){
-    console.log("======renderrenderrenderrender=====");
     return(
       <TabBarIOS  tintColor='#36b9af'>
            <TabBarIOS.Item
@@ -81,6 +89,7 @@ class AppTables extends Component{
                   initialRoute={{
                       component: Onsite,
                       title: '上门',
+                      passProps: { callBackParent: this.onChildClick }
                   }}
                 />
            </TabBarIOS.Item>
