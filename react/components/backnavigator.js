@@ -45,7 +45,8 @@ class BackNavigator extends Component {
             leftButtonIcon: this.state.backIcon,
             onLeftButtonPress: this.props.navigator.pop,
             passProps:{
-              navigator: this
+              navigator: this,
+              ...this.props.route.passProps,
             }
           }}
         />
@@ -56,7 +57,6 @@ class BackNavigator extends Component {
   }
 
   close() {
-    console.log("======close====closecloseclose===");
     this.props.navigator.pop();
   }
 }

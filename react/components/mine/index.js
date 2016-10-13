@@ -13,7 +13,7 @@ class Mine extends Component {
   render() {
     return (
       <View style={ styles.container}>
-          <Text style={ styles.welcome}>Mine</Text>
+          <Text style={ styles.welcome }>{this.props.isShowHeader}</Text>
       </View>
     );
   }

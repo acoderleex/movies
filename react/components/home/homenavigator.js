@@ -49,16 +49,18 @@ class HomeNavigator extends Component {
       return(
           <BackNavigator  navigator={ navigator } route={{
               title: "上门",
-              component: OnSite
+              component: OnSite,
+              passProps:{...route.passProps}
             }}/>
           );
     }
 
     if (route.mine) {
       return(
-        <BackNavigator navigator={ navigator} route={{
+        <BackNavigator navigator={ navigator } route={{
             title: "我的",
-            component: Mine
+            component: Mine,
+            passProps:{...route.passProps}
           }}/>
       );
     }

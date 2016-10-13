@@ -59,18 +59,18 @@ class App extends Component {
       if (indexItem==0) {
         this.props.navigator.push({
             onsite: true,
-            passprops: { isShowBackIcon: 1 }
+            passProps: { isShowHeader: '1' }
         });
       }else  if (indexItem==1) {
         this.setState({isShowHeader:false}),
         this.props.navigator.push({
             mine: true,
-            passprops: { isShowBackIcon: 1 }
+            passProps: { isShowHeader: '12888' }
         });
       }else  if (indexItem==2) {
         this.props.navigator.push({
             home: true,
-            passprops: { isShowBackIcon: 1 }
+            passProps: { isShowHeader: '1' }
         });
       }
     }
