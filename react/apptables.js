@@ -26,15 +26,15 @@ class AppTables extends Component{
 
   changeTab(name:string){
     this.setState({
-      selectedTab: name,
-      isShowHeader: false
+      selectedTab: name
     });
   }
 
   onChildClick(){
     console.log(this);
     this.setState({
-      notifyCount:11
+      notifyCount:11,
+      isShowHeader: false
     });
   }
 
@@ -49,7 +49,16 @@ class AppTables extends Component{
     }
   }
 
+  getTitleName(): string{
+    if (this.state.notifyCount>10) {
+      return '尼玛';
+    }else {
+      return '上门';
+    }
+  }
+
   render(){
+    console.log(this);
     return(
       <TabBarIOS  tintColor='#36b9af'>
            <TabBarIOS.Item
@@ -82,11 +91,11 @@ class AppTables extends Component{
               selected={this.state.selectedTab==='onsite'}
               onPress= {()=>this.changeTab('onsite')}>
               <NavigatorIOS
-                  navigationBarHidden={ true}
+                  navigationBarHidden={ !this.state.isShowHeader }
                   style={styles.container}
                   initialRoute={{
                       component: Onsite,
-                      title: '上门',
+                      title:  this.getTitleName(),
                       passProps: { callBackParent: this.onChildClick.bind(this) }
                   }}
                 />
@@ -100,6 +109,7 @@ class AppTables extends Component{
               selected={this.state.selectedTab==='merchant'}
               onPress = {()=>this.changeTab('merchant')}>
               <NavigatorIOS
+                  navigationBarHidden={ !this.state.isShowHeader }
                   style={styles.container}
                   initialRoute={{
                       component: Merchant,
@@ -116,6 +126,7 @@ class AppTables extends Component{
               selected={this.state.selectedTab==='mine'}
               onPress= {()=>this.changeTab('mine')}>
               <NavigatorIOS
+                  navigationBarHidden={ !this.state.isShowHeader }
                   style={styles.container}
                   initialRoute={{
                       component: Mine,
@@ -133,6 +144,7 @@ class AppTables extends Component{
               selected={this.state.selectedTab==='more'}
               onPress= {()=>this.changeTab('more')}>
               <NavigatorIOS
+                  navigationBarHidden={ !this.state.isShowHeader }
                   style={styles.container}
                   initialRoute={{
                       component: More,
