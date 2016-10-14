@@ -32,9 +32,7 @@ class AppTables extends Component{
   }
 
   onChildClick(){
-    console.log('-----caaaaaa------');
     console.log(this);
-    console.log('-----caaaaaa--1----');
     this.setState({
       notifyCount:11
     });
@@ -89,7 +87,7 @@ class AppTables extends Component{
                   initialRoute={{
                       component: Onsite,
                       title: '上门',
-                      passProps: { callBackParent: this.onChildClick }
+                      passProps: { callBackParent: this.onChildClick.bind(this) }
                   }}
                 />
            </TabBarIOS.Item>
