@@ -7,6 +7,8 @@ import {
    TouchableHighlight
 } from 'react-native';
 
+
+import Pubsub from 'pubsub-js';
 import assign from 'object-assign';
 import CommonStyle from '../../styles/common';
 
@@ -22,8 +24,9 @@ class Onsite extends Component {
   }
 
   handleClick(){
-    console.log(this);
-    this.props.callBackParent();
+    console.log('--handleClickhandleClickhandleClickhandleClickhandleClick------');
+    // this.props.callBackParent();
+    PubSub.publish('refreshTableData',this.props);
   }
 }
 const styles = StyleSheet.create(assign(

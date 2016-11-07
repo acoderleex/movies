@@ -9,6 +9,8 @@ import {
 
 import assign from 'object-assign';
 import CommonStyle from './styles/tablecontent';
+import Pubsub from 'pubsub-js';
+
 
 import Home from './components/home/homenavigator';
 import Onsite from './components/onsite';
@@ -55,6 +57,21 @@ class AppTables extends Component{
     }else {
       return '上门';
     }
+  }
+
+  componentDidMount(){
+      console.log("=========componentDidMount=======");
+      this.pubsub_token=PubSub.subscribe('refreshTableData',function () {
+        this.setState({
+          notifyCount:11,
+          isShowHeader: false
+        });
+      }.bind(this));
+  }
+
+  componentWillUnmount(){
+    PubSub.unsubscribe(this.pubsub_token);
+    console.log("============componentWillUnmount=========");
   }
 
   render(){
